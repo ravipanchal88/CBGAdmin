@@ -1,0 +1,32 @@
+doctype html
+html
+	head
+		title CBG Admin
+		link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		script(src='https://use.fontawesome.com/a3a71a0323.js')
+		script(src='/javascripts/jquery.js')
+		script(src='/javascripts/bootstrap.js')
+		script(src='/javascripts/cookies.js')
+		script(src='/javascripts/application.js')
+
+	body
+		.fluid-container
+			.row
+				.col-lg-4.col-md-4
+					img(src="/images/logo.png")
+				.col-lg-4.col-md-4.navbar-right
+					ul.nav.navbar-nav.navbar-right
+						if currentUser
+							li: p.navbar-text Signed in as #{currentUser.name}
+							li: a(href='/user/logout') Log Out
+						else
+							li: a(href='/user/signup') Sign Up
+							li: a(href='/user/login') Log In
+		.fluid-container
+			.row
+				block content
+		.fluid-container
+			.row
+				.col-lg-4.col-md-4
+					p CBG FoundationORG
