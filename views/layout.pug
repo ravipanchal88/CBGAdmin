@@ -2,7 +2,7 @@ doctype html
 html
 	head
 		title CBG Admin
-		link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+		link(rel='stylesheet', href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
 		link(rel='stylesheet', href='/stylesheets/style.css')
 		script(src='https://use.fontawesome.com/a3a71a0323.js')
 		script(src='/javascripts/jquery.js')
@@ -12,9 +12,9 @@ html
 
 	body
 		.fluid-container
-			.row
-				.col-lg-4.col-md-4
-					img(src="/images/logo.png")
+			.row.navbar.headnav
+				.col-lg-8.col-md-8
+					img(src="/images/logo.png" style="width:250px")
 				.col-lg-4.col-md-4.navbar-right
 					ul.nav.navbar-nav.navbar-right
 						if currentUser
@@ -29,4 +29,4 @@ html
 		.fluid-container
 			.row
 				.col-lg-4.col-md-4
-					p CBG FoundationORG
+					p CBG Foundation.ORG

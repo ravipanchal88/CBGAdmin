@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+	.fluid-container
+		.row
+			.col-lg-12.col-md-12
+				h1= title
+				p Welcome to Admin Sign UP Page - #{title}
+		.row
+			.col-lg-4.col-md-4
+				h1 Sign Up
+				include ../errors
+				form(action='/user/signup', method='post', novalidate)
+					.form-group
+						label(for='name') Name
+						input.form-control(name='name', value=user.name, autofocus)
+					.form-group
+						label(for='email') Email
+						input.form-control(name='email', value=user.email, autofocus)
+					.form-group
+						label(for='password') Password
+						input.form-control(name='password', type='password',value=user.password)
+					.form-group
+						input.btn.btn-primary.btn-lg(type='submit', value='Register')
