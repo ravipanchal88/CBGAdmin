@@ -84,7 +84,7 @@ router.get('/login', function(request, response) {
 
 router.post('/login', passport.authenticate('local'), function(request, response) {
 	console.log("Login Loop 1");
-	response.redirect('/imagepost');
+	response.redirect('/index');
 });
 
 // Log out.

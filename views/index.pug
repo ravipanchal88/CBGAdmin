@@ -2,12 +2,24 @@ extends layout
 
 block content
 	.fluid-container
-			.row.dashboard
-				.col-lg-3.col-md-3
-					a.btn.custom_feature1(href='/') Student Management
-				col-lg-3.col-md-3
-					a.btn.custom_feature2(href='/') Sponsor Management
-				col-lg-3.col-md-3
-					a.btn.custom_feature3(href='/') Sponsorship Management
-				col-lg-3e.col-md-3
-					a.btn.custom_feature4(href='/') Add Donation	
+		.row.dashboard1
+			.col-lg-4
+				.item1
+					p # Sponsored Students
+					h1 376
+					a.btn.btn-primary(href='#') See Details
+			.col-lg-4
+				.item2
+					p Number of Donors
+					h1 57
+					a.btn.btn-primary(href='#') See Details
+			.col-lg-4
+				.item3
+					p $ Raised
+					h1 $78908
+					a.btn.btn-primary(href='#') See Details
+			.col-lg-4
+				.item4
+					p Unsponsored Students
+					h1 31
+					a.btn.btn-primary(href='#') See Details	

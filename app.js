@@ -2,9 +2,16 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
 
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+//NPM Packages for Authentication
+var session      = require('express-session');
+var passport     = require('passport');
+
+
+
+//Routers
 var index = require('./routes/index');
 var users = require('./routes/user');
 
@@ -21,9 +28,25 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+//Middleware for Passport
+app.use(session({secret: 'wwerwjflwnfkjhwjkrhewjkrhewjkrhjw12'}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(function(request, response, next) {
+  console.log("currentUser");
+  response.locals.currentUser = request.user;
+  console.log(request.user);
+  next();
+});
+
 
 app.use('/', index);
 app.use('/user', users);
+
+
+// Middleware.
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

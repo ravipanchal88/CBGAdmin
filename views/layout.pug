@@ -9,12 +9,13 @@ html
 		script(src='/javascripts/bootstrap.js')
 		script(src='/javascripts/cookies.js')
 		script(src='/javascripts/application.js')
+		
 
 	body
 		.fluid-container
 			.row.navbar.headnav
 				.col-lg-8.col-md-8
-					img(src="/images/logo.png" style="width:250px")
+					img(src="/images/logo.png" style="width:200px")
 				.col-lg-4.col-md-4.navbar-right
 					ul.nav.navbar-nav.navbar-right
 						if currentUser
@@ -23,10 +24,40 @@ html
 						else
 							li: a(href='/user/signup') Sign Up
 							li: a(href='/user/login') Log In
-		.fluid-container
+			.row.dashboard-main
+				.col-lg-3.col-md-3
+					div.area
+						nav.main-menu
+							ul
+								li
+									a(href='#')
+										i.fa.fa-home.fa-2x
+										span.navtext Home
+							ul
+								li
+									a(href='#')
+										i.fa.fa-graduation-cap.fa-2x
+										span.navtext Student Management
+								li.has-subnav
+									a(href='#')
+										i.fa.fa-plus
+										span.navtext Add Student
+								li.has-subnav
+									a(href='#')
+										i.fa.fa-pencil-square-o
+										span.navtext Edit/Update Student
+							ul
+								li.has-subnav
+									a(href='#')
+										i.fa.fa-users.fa-2x
+										span.navtext Sponsor Management
+							ul
+								li.has-subnav
+									a(href='#')
+										i.fa.fa-usd.fa-2x
+										span.navtext Add Donation
+				.col-lg-9.col-md-9
+					block content
 			.row
-				block content
-		.fluid-container
-			.row
-				.col-lg-4.col-md-4
-					p CBG Foundation.ORG
+				.col-lg-12/col-md-12.footer
+					p IRS 501(C’)(3) Organization © CBG Foundation 2017-18 - All rights reserved
