@@ -52,7 +52,7 @@ passport.deserializeUser(function(id, done) {
 // Sign up.
 router.get('/signup', function(request, response) {
 	response.render('user/signup', {
-		user: {}
+		
 	})
 });
 
@@ -79,18 +79,18 @@ router.post('/signup', function(request, response) {
 // Log in.
 router.get('/login', function(request, response) {
 	console.log("Login Loop");
-	response.render('user/index')
+	response.render('user/login')
 });
 
-router.post('/login', passport.authenticate('local'), function(request, response) {
+router.post('/login', function(request, response) {
 	console.log("Login Loop 1");
-	response.redirect('/index');
+	response.redirect('/');
 });
 
 // Log out.
 router.get('/logout', function(request, response) {
 	request.logout();
-	response.redirect('/');
+	response.redirect('/user/login');
 });
 
 
