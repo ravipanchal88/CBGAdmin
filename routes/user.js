@@ -82,7 +82,7 @@ router.get('/login', function(request, response) {
 	response.render('user/login')
 });
 
-router.post('/login', function(request, response) {
+router.post('/login', passport.authenticate('local'),function(request, response) {
 	console.log("Login Loop 1");
 	response.redirect('/');
 });
