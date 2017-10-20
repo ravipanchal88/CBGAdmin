@@ -15,6 +15,7 @@ module.exports = function(sequelize, DataTypes) {
               email: value
             }
           }).then(function(user) {
+            console.log("in user model")
             if (user && user.id != self.id)
               return(next('Email is already registered'));
             else
