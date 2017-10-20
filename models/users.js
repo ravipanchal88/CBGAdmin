@@ -42,8 +42,7 @@ module.exports = function(sequelize, DataTypes) {
           msg: 'Name is required'
         }
       }
-    }
-    
+    } 
   }
   //   {
   //   classMethods: {

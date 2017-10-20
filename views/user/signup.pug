@@ -20,6 +20,7 @@ html
 		.row
 			.col-lg-8.col-md-8.register_form
 				h5 Sign Up
+				include ../errors
 				form(action='/user/signup', method='post', novalidate)
 					.form-group
 						label(for='name') Name
