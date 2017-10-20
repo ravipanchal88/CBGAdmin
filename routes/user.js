@@ -78,13 +78,13 @@ router.post('/signup', function(request, response) {
 
 // Log in.
 router.get('/login', function(request, response) {
-	console.log("Login Loop");
+	console.log("Login get function");
 	response.render('user/login')
 });
 
-router.post('/login', function(request, response) {
+router.post('/login', passport.authenticate('local'),function(request, response) {
 	console.log("Login Loop 1");
-	response.redirect('/');
+	response.redirect('/index');
 });
 
 // Log out.
