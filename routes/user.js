@@ -3,6 +3,7 @@ var passport = require('passport');
 var local    = require('passport-local');
 var bcrypt   = require('bcrypt');
 var models   = require('../models/index');
+var flash = require('connect-flash');
 //var models   = require('../models/users');
 var User     = models.user;
 var router   = express.Router();
@@ -25,13 +26,14 @@ passport.use(
 					email: email
 				}
 			}).then(function(user) {
-	      if (!user)
+	      if (!user) {
 	        return(done(null, false, {message: 'A user with that email does not exist.'}));
+	    }
 	      else {
-					bcrypt.compare(password, user.password, function(error, result) {
-						if (result)
-				      return(done(null, user));
-						else
+				bcrypt.compare(password, user.password, function(error, result) {
+				if (result)
+				    return(done(null, user));
+				else
 			        return(done(null, false, {message: 'Incorrect password.'}));
 	        	});
 			}
@@ -90,13 +92,11 @@ router.post('/login', passport.authenticate('local'),function(request, response)
 });
 
 
-
-// router.post('/login', passport.authenticate('local',{ successRedirect: '/',
-//                                    failureRedirect: '/login',
-//                                    failureFlash: true }),function(request, response) {
-// 	console.log("Login Loop 1");
-// 	//response.redirect('/index');
-// });
+// router.post('/login', passport.authenticate('local',
+// 	{ successRedirect: '/index',
+//       failureRedirect: 'user/login'
+//       failureFlash: 'Invalid username or password.'})
+// );
 
 
 

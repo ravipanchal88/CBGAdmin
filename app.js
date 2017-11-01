@@ -8,12 +8,14 @@ var cookieParser = require('cookie-parser');
 //NPM Packages for Authentication
 var session      = require('express-session');
 var passport     = require('passport');
+var flash = require('connect-flash');
 
 
 
 //Routers
 var index = require('./routes/index');
 var users = require('./routes/user');
+var student = require('./routes/student');
 
 var app = express();
 
@@ -32,6 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({secret: 'wwerwjflwnfkjhwjkrhewjkrhewjkrhjw12'}));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 app.use(function(request, response, next) {
   //console.log("currentUser");
@@ -43,6 +46,7 @@ app.use(function(request, response, next) {
 
 app.use('/', index);
 app.use('/user', users);
+app.use('/student',student);
 
 
 // Middleware.
