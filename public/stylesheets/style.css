@@ -200,6 +200,17 @@ background-color: #ffcf40;
 	/*border:solid 1px black;*/
 }
 
+.form_lbl,.form_txt {
+	margin: 0px 0px 5px 0px;
+	height: 30px;
+	/*border:solid 1px grey;*/
+	/*border-radius: 5px;*/
+	color:grey;
+	font-size: small;
+	font-weight: bold;
+
+}
+
 
 /*********/
 

@@ -3,76 +3,59 @@ extends ../layout
 block content
 	.fluid-container
 		.row
-			.col-lg-8.col-md-8
+			.col-lg-9.col-md-10
 				h2 Add Student Information
-				.panel.panel-body.panel-primary
-					.panel-body General Information
-					include ../errors
-					form(action='/student/addstudent', method='post', novalidate)
-						.form-group
-							label.col-lg-3(for='name') First Name
-							input.col-lg-3(name='firstname', value=firstname, autofocus)
-						.form-group
-							label.col-lg-3(for='name') Last Name
-							input.col-lg-3(name='Lastname', value=lastname, autofocus)
-						.form-group
-							label.col-lg-3(for='name') Parents Name
-							input.col-lg-3(name='parentsname', value=parentsname, autofocus)
-						.form-group
-							label.col-lg-3(for='name') Date of Birth
-							input.col-lg-3(name='dob', value=dob, autofocus)
-						.form-group
-							label.col-lg-3(for='name') Gender
-							input.col-lg-3(name='gender', value=gender, autofocus)
-						.form-group
-							label.col-lg-3(for='name') Address
-							input.col-lg-3(name='address', value=address, autofocus)
-
-		.row
-			.col-lg-8.col-md-8.register_form
-				include ../errors
-				form(action='/student/addstudent', method='post', novalidate)
+				.panel-group
+					.panel.panel-default
+						.panel-heading General Information
+						.panel-body
+							include ../errors
+							form(action='/student/addstudent', method='post', novalidate)
+								.form-group
+									label.col-lg-2.form_lbl(for='firstname') First Name
+									input.col-lg-4.form_txt(name='firstname', value=firstname, autofocus)
+								.form-group
+									label.col-lg-2.form_lbl(for='lastname') Last Name
+									input.col-lg-4.form_txt(name='Lastname', value=lastname, autofocus)
+								.form-group
+									label.col-lg-2.form_lbl(for='parentsname') Parents Name
+									input.col-lg-4.form_txt(name='parentsname', value=parentsname, autofocus)
+								.form-group
+									label.col-lg-2.form_lbl(for='dob') Date of Birth
+									input.col-lg-4.form_txt(name='dob', value=dob, type='date' autofocus)
+								.form-group
+									label.col-lg-2.form_lbl(for='gender') Gender
+									input.col-lg-4.form_txt(name='gender', value=gender, autofocus)
+								.form-group
+									label.col-lg-2.form_lbl(for='address') Address
+									input.col-lg-4.form_txt(name='address', value=address, autofocus)
+					.panel.panel-default
+						.panel-heading Evaluation Information
+						.panel-body
+							.form-group
+								label.col-lg-2.form_lbl(for='income') Income
+								input.col-lg-4.form_txt(name='income', value=number, type='number' autofocus)
+							.form-group
+								label.col-lg-2.form_lbl(for='housetype') House Type
+								input.col-lg-4.form_txt(name='housetype', value=housetype, autofocus)
+							.form-group
+								label.col-lg-2.form_lbl(for='interest') Interests
+								input.col-lg-4.form_txt(name='interest', value=interest, autofocus)
+							.form-group
+								label.col-lg-3.form_lbl(for='financial_position') Financial Position 
+								input.col-lg-3.form_txt(name='financial_position',value=financial_position)
+							.form-group
+								label.col-lg-3.form_lbl(for='studycommitment') Study Commitment 
+								input.col-lg-3.form_txt(name='studycommitment',value=studycommitment)
+							.form-group
+								label.col-lg-3.form_lbl(for='activity') Activity 
+								input.col-lg-3.form_txt(name='activity',value=activity)
+							.form-group
+								label.col-lg-3.form_lbl(for='total') Total 
+								input.col-lg-3.form_txt(name='total',value=total)
+							.form-group
+								label.col-lg-3.form_lbl(for='comment') Comments
+								input.col-lg-3.form_txt(name='comment', value=comment ,type='textarea')
 					.form-group
-						label(for='name') First Name
-						input.form-control.login_input(name='firstname', value=firstname, autofocus)
-					.form-group
-						label(for='name') Last Name
-						input.form-control.login_input(name='Lastname', value=lastname, autofocus)
-					.form-group
-						label(for='name') Parents Name
-						input.form-control.login_input(name='parentsname', value=parentsname, autofocus)
-					.form-group
-						label(for='name') Date of Birth
-						input.form-control.login_input(name='dob', value=dob, autofocus)
-					.form-group
-						label(for='name') Gender
-						input.form-control.login_input(name='gender', value=gender, autofocus)
-					.form-group
-						label(for='name') Address
-						input.form-control.login_input(name='address', value=address, autofocus)
-					.form-group
-						label(for='name') Income
-						input.form-control.login_input(name='income', value=income, autofocus)
-					.form-group
-						label(for='name') House Type
-						input.form-control.login_input(name='house_type', value=house_type, autofocus)
-					.form-group
-						label(for='email') Interests
-						input.form-control.login_input(name='interest', value=interest, autofocus)
-					.form-group
-						label(for='password') Financial Position 
-						input.form-control.login_input(name='financial_position',value=financial_position)
-					.form-group
-						label(for='password') Study Commitment 
-						input.form-control.login_input(name='financial_position',value=study_commitment)
-					.form-group
-						label(for='password') Activity 
-						input.form-control.login_input(name='activity',value=activity)
-					.form-group
-						label(for='password') Total 
-						input.form-control.login_input(name='total',value=total)
-					.form-group
-						label(for='password') Comments
-						input.form-control.login_input(name='comment',value=comment)
-					.form-group
-						input.btn.btn-primary.btn-lg.login_button(type='submit', value='Submit')
+						input.btn.btn-default.btn-primary(type='submit', value='Enroll')
+						input.btn.btn-primary.btn-default(type='submit', value='Cancel')
