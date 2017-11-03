@@ -16,39 +16,40 @@ block content
 						.panel-heading General Information
 						.panel-body
 							include ../errors
-							form(action='/student/addstudent', method='post', novalidate)
+							form(action='/student/addstudent', method='post')
 								.form-group
 									label.col-lg-2.form_lbl(for='firstname') First Name
-									input.col-lg-4.form_txt(name='firstname', value=firstname, autofocus)
+									input.col-lg-4.form_txt(name='firstname', autofocus)
 								.form-group
 									label.col-lg-2.form_lbl(for='lastname') Last Name
-									input.col-lg-4.form_txt(name='Lastname', value=lastname, autofocus)
+									input.col-lg-4.form_txt(name='lastname', autofocus)
 								.form-group
-									label.col-lg-2.form_lbl(for='parentsname') Parents Name
-									input.col-lg-4.form_txt(name='parentsname', value=parentsname, autofocus)
+									label.col-lg-2.form_lbl(for='parentname') Parents Name
+									input.col-lg-4.form_txt(name='parentname', autofocus)
 								.form-group
 									label.col-lg-2.form_lbl(for='dob') Date of Birth
-									input.col-lg-4.form_txt(name='dob', value=dob, type='date', autofocus)
-								
+									input.col-lg-4.form_txt(name='dob', type='date', autofocus)
 								.form-group
 									label.col-lg-2.form_lbl(for='address') Address Line
-									input.col-lg-10.form_txt(name='address', value=address, autofocus)
+									input.col-lg-10.form_txt(name='address',  autofocus)
 								.form-group
 									label.col-lg-2.form_lbl(for='village') Village
-									input.col-lg-4.form_txt(name='village', value=address, autofocus)
+									input.col-lg-4.form_txt(name='village', autofocus)
 									p.col-lg-5.form_txt ,Gujurat, INDIA
 								.form-group
 									label.col-lg-2.form_lbl(for='gender') Gender
-									input.col-lg-1.form_txt(name='gender', type='radio' ,value=male ,autofocus)
+									input.col-lg-1.form_txt(name='gender', type='radio' ,value='female' ,autofocus)
 									.col-lg-1.form_txt Male
-									input.col-lg-1.form_txt(name='gender', type='radio' ,value=male ,autofocus)
-									.col-lg-1.form_txt Female	
+									input.col-lg-1.form_txt(name='gender', type='radio' ,value='male' ,autofocus)
+									.col-lg-1.form_txt Female
+								.form-group
+									input.btn.btn-primary.btn-md(type='submit',value='Post')
 					.panel.panel-default
 						.panel-heading Evaluation Information
 						.panel-body
 							.form-group
 								label.col-lg-2.form_lbl(for='income') Income(INR)
-								input.col-lg-4.form_txt(name='income', value=number, type='number' autofocus)
+								input.col-lg-4.form_txt(name='income', value=income, type='number' autofocus)
 							.form-group
 								label.col-lg-2.form_lbl(for='aadharnbr') Aadhar#
 								input.col-lg-4.form_txt(name='aadharnbr', value=aadharnbr, type='text' autofocus)
@@ -59,8 +60,8 @@ block content
 								label.col-lg-2.form_lbl(for='interest') Interests
 								input.col-lg-4.form_txt(name='interest', value=interest, autofocus)
 							.form-group
-								label.col-lg-3.form_lbl(for='financial_position') Financial Position 
-								input.col-lg-3.form_txt(name='financial_position',value=financial_position)
+								label.col-lg-3.form_lbl(for='financialposition') Financial Position 
+								input.col-lg-3.form_txt(name='financialposition',value=financialposition)
 							.form-group
 								label.col-lg-3.form_lbl(for='studycommitment') Study Commitment 
 								input.col-lg-3.form_txt(name='studycommitment',value=studycommitment)
@@ -73,7 +74,3 @@ block content
 							.form-group
 								label.col-lg-3.form_lbl(for='comment') Comments
 								textarea.col-lg-3.form_txt(name='comment', row="4" ,column="2",value=comment)
-		.row
-			.col-lg-9.col-md-10.form_action
-					input.col-lg-4.btn.btn-primary.form_btn(type='submit', value='Enroll')
-					input.col-lg-4.btn.btn-primary.form_btn(type='submit', value='Cancel')
