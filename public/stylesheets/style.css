@@ -202,7 +202,7 @@ background-color: #ffcf40;
 
 .form_lbl,.form_txt {
 	margin: 0px 0px 5px 0px;
-	height: 30px;
+	min-height: 30px;
 	/*border:solid 1px grey;*/
 	/*border-radius: 5px;*/
 	color:grey;
@@ -210,8 +210,47 @@ background-color: #ffcf40;
 	font-weight: bold;
 
 }
+.form_action {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin: 5px 5px;
+	border-radius: 1px;
 
+}
+.form-group {
+	margin-bottom: 0px;
+}
+.form_btn {
+	background-color: darkgrey;
+	margin: 20px 20px 20px 20px;
 
+}
+
+ul.breadcrumb {
+    padding: 5px 5px;
+    list-style: none;
+    background-color: #eee;
+}
+ul.breadcrumb li {
+    display: inline;
+    font-size: 12px;
+    background-color: #eee;
+}
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
 /*********/
 
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);

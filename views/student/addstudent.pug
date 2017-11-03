@@ -4,7 +4,13 @@ block content
 	.fluid-container
 		.row
 			.col-lg-9.col-md-10
-				h2 Add Student Information
+				ul.breadcrumb
+					li 
+						a(href='/') Home
+					li Student Management	
+					li Enroll Student
+		.row
+			.col-lg-9.col-md-10
 				.panel-group
 					.panel.panel-default
 						.panel-heading General Information
@@ -22,19 +28,30 @@ block content
 									input.col-lg-4.form_txt(name='parentsname', value=parentsname, autofocus)
 								.form-group
 									label.col-lg-2.form_lbl(for='dob') Date of Birth
-									input.col-lg-4.form_txt(name='dob', value=dob, type='date' autofocus)
+									input.col-lg-4.form_txt(name='dob', value=dob, type='date', autofocus)
+								
+								.form-group
+									label.col-lg-2.form_lbl(for='address') Address Line
+									input.col-lg-10.form_txt(name='address', value=address, autofocus)
+								.form-group
+									label.col-lg-2.form_lbl(for='village') Village
+									input.col-lg-4.form_txt(name='village', value=address, autofocus)
+									p.col-lg-5.form_txt ,Gujurat, INDIA
 								.form-group
 									label.col-lg-2.form_lbl(for='gender') Gender
-									input.col-lg-4.form_txt(name='gender', value=gender, autofocus)
-								.form-group
-									label.col-lg-2.form_lbl(for='address') Address
-									input.col-lg-4.form_txt(name='address', value=address, autofocus)
+									input.col-lg-1.form_txt(name='gender', type='radio' ,value=male ,autofocus)
+									.col-lg-1.form_txt Male
+									input.col-lg-1.form_txt(name='gender', type='radio' ,value=male ,autofocus)
+									.col-lg-1.form_txt Female	
 					.panel.panel-default
 						.panel-heading Evaluation Information
 						.panel-body
 							.form-group
-								label.col-lg-2.form_lbl(for='income') Income
+								label.col-lg-2.form_lbl(for='income') Income(INR)
 								input.col-lg-4.form_txt(name='income', value=number, type='number' autofocus)
+							.form-group
+								label.col-lg-2.form_lbl(for='aadharnbr') Aadhar#
+								input.col-lg-4.form_txt(name='aadharnbr', value=aadharnbr, type='text' autofocus)
 							.form-group
 								label.col-lg-2.form_lbl(for='housetype') House Type
 								input.col-lg-4.form_txt(name='housetype', value=housetype, autofocus)
@@ -55,7 +72,8 @@ block content
 								input.col-lg-3.form_txt(name='total',value=total)
 							.form-group
 								label.col-lg-3.form_lbl(for='comment') Comments
-								input.col-lg-3.form_txt(name='comment', value=comment ,type='textarea')
-					.form-group
-						input.btn.btn-default.btn-primary(type='submit', value='Enroll')
-						input.btn.btn-primary.btn-default(type='submit', value='Cancel')
+								textarea.col-lg-3.form_txt(name='comment', row="4" ,column="2",value=comment)
+		.row
+			.col-lg-9.col-md-10.form_action
+					input.col-lg-4.btn.btn-primary.form_btn(type='submit', value='Enroll')
+					input.col-lg-4.btn.btn-primary.form_btn(type='submit', value='Cancel')
